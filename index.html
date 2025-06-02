@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./asset/image/joker.png" type="image/x-icon">
+    <title>Portfolio de Jonathan</title>
+    <link rel="stylesheet" href="dist/style.css" />
+</head>
+
+
+<body class="bg-neutralLight text-neutralDark dark:bg-neutralDark dark:text-neutralLight font-sans">
+    <!-- HEADER -->
+    <header class="p-6 flex flex-col md:flex-row justify-between items-center border-b border-jokerPurple relative">
+        <!-- Animation Texte -->
+        <div id="matrixTypewriter" class="text-3xl font-extrabold text-jokerGreen tracking-widest">
+            <span id="animatedName"></span>
+        </div>
+        <!-- Phrase poétique FIXE au centre -->
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none z-10">
+            <p
+                class="text-center text-2xl italic font-semibold text-neutralDark dark:text-neutralLight transition duration-300 px-4">
+                J’écris du code comme d'autres écrivent des poèmes : avec âme et méthode
+            </p>
+        </div>
+        <!-- Mode Sombre / Clair -->
+        <div class="relative w-16 h-9 bg-jokerGreen rounded-full cursor-pointer transition-all duration-500"
+            id="themeToggle">
+            <!-- Soleil -->
+            <img src="asset/image/sun1.png" alt="mode clair"
+                class="absolute top-1 left-1 w-7 h-7 transition-all duration-300" id="sunIcon">
+            <!-- Lune -->
+            <img src="asset/image/moon1.png" alt="mode sombre"
+                class="absolute top-1 right-1 w-7 h-7 opacity-0 transition-all duration-300" id="moonIcon">
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+    <main class="p-6 max-w-5xl mx-auto space-y-24">
+        <!--SECTION ACCUEIL-->
+        <section id="accueil" class="space-y-2 mt-10 ">
+            <h2 class="text-lg font-sans leading-relaxed text-center">Hello ! Je suis </h2>
+            <h2 class="text-2xl font-bold text-center text-jokerPurple uppercase">Jonathan Auroux-Martel</h2>
+            <h2 class="text-lg font-sans leading-relaxed text-center">Codeur</h2>
+            <div class="flex justify-center">
+                <button class="bg-jokerPurple text-white px-6 py-3 rounded-md shadow hover:bg-jokerGreen transition ">
+                    <!-- ATTENTION :
+                        Quand on utilise target="_blank", toujours ajouter : rel="noopener noreferrer"
+                        - noopener : empêche la page ouverte d’avoir accès à window.opener (sécurité)
+                        - noreferrer : masque la page d’origine (anonymat et sécurité)
+                    -->
+                    <a href="./asset/doc/CV_Jonathan_Auroux_Martel.pdf" target="_blank"
+                        rel="noopener noreferrer">Télécharger mon CV</a>
+                </button>
+            </div>
+
+        </section>
+        <!-- SECTION A PROPOS -->
+        <section id="a-propos" class="space-y-4">
+            <h2 class="text-3xl font-bold text-jokerPurple uppercase">À propos</h2>
+            <p class="text-lg leading-relaxed">
+                Je n'ai pas un parcours lisse. Je n'ai pas coché toutes les cases. Et tu sais quoi ?
+                <span class="text-xl font-bold text-jokerGreen">Tant mieux.</span>
+            </p>
+            <p class="text-lg leading-relaxed">
+                Pendant 15 ans, j’ai travaillé en cuisine, sous pression, dans la chaleur et le bruit. J'ai acquis des
+                compétences que j'ai pu utiliser aussi bien sur le plan personnel que professionnel. <br>
+                Puis j’ai plongé dans les câbles, les lignes cuivrées, la fibre optique, les routeurs, les PABX et les
+                box en panne. Cela m'a permis de sortir de ma zone de confort, en devant socialiser avec mes pairs. </p>
+            <p class="text-lg leading-relaxed">
+                Chaque métier m’a forgé un mental. J’ai appris à garder le sourire même quand tout brûle, à danser
+                sous pression, à écouter le silence quand d’autres paniquent. J’avance avec la rage de réussir, la folie
+                contrôlée de ceux qu’on n’attendait pas… et pourtant, je suis là, prêt à tout retourner — avec élégance
+                et détermination.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Après une remise en question professionelle post COVID, j'ai décidé de me lancer dans le monde du
+                développement, car il était trop tard pour mon autre rêve : Médecin légiste.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Tomber dans le code à l'émergeance de l'informatique et des nouvelles technologies. J'ai fait mes
+                premières armes sur la console Intellivion de Mattel.
+                <br>
+                Mes premières lignes de code, en Basic ont été un véritable coup de foudre.
+            </p>
+            <p class="text-lg leading-relaxed">
+                J'aime la programmation, car elle me permet de créer quelque chose de rien, de faire apparaître de
+                l'ordre dans le chaos... ou l'inverse. <br>
+                Mais surtout, je l'aime pour la liberté qu'elle me donne, la possibilité de créer, de faire évoluer, de
+                changer. Donner vie à des idées, à des concepts, à des rêves.
+                Je n'ai pas choisi ce métier , il m'a choisi. Et je suis heureux de l'avoir fait.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Je suis atypique. Et je le revendique. J’apprends vite, je pense autrement, parfois à l’envers, mais
+                toujours avec sens. Je doute souvent, j’avance toujours. Je ne suis pas formaté, je suis façonné.
+            </p>
+            <p class="text-lg leading-relaxed font-semibold italic text-jokerGreen">
+                Je veux construire. Pas juste des applis, mais des ponts. Entre les gens, entre les idées, entre les
+                mondes.
+            </p>
+            <p class="text-2xl leading-relaxed font-bold italic text-jokerGreen">
+                Si t’as lu jusqu’ici, t’as déjà compris que je suis pas là pour faire semblant.
+            </p>
+        </section>
+
+        <!-- SECTION PORJETS / PORTFOLIO -->
+        <section id="projets" class="space-y-4">
+            <h2 class="text-3xl font-bold text-jokerPurple uppercase">
+                Mes Projets
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-10">
+
+                <!-- Projet 1 : IdentyQuest -->
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
+                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-2xl font-bold text-jokerGreen mb-2"> IdentyQuest</h3>
+                    <p class="text-base text-neutralDark dark:text-neutralLight">
+                        Application d'exploration identitaire & neurodivergence. <br>
+                        <strong>Stack :</strong> Spring Boot (backend), Flutter (frontend), base de données intégrée.
+                        <br> Journal introspectif, rappels, tests, annuaire pro... Un projet de cœur 💚.
+                    </p>
+                </div>
+
+                <!-- Projet 2 : Bibli'o -->
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
+                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-2xl font-bold text-jokerGreen mb-2"> Bibli’o</h3>
+                    <p class="text-base text-neutralDark dark:text-neutralLight">
+                        Appli Java Swing de gestion de bibliothèque. <br>
+                        <strong>Fonctionnalités :</strong> interface de prêts/retours, statistiques, gestion des
+                        lecteurs. <br>
+                        Bonus : version JavaFX en parallèle pour le dossier professionnel.
+                    </p>
+                </div>
+
+                <!-- Projet 3 : Le mées-->
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
+                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
+
+                    <h3 class="text-2xl font-bold text-jokerGreen mb-2">LM Le Mées</h3>
+                    <p class="text-base text-neutralDark dark:text-neutralLight">
+                        Site vitrine développé sous Synfony<br>
+                        <strong>Fonctionnalités :</strong> interface admin pour la gestion de la carte. <br>
+                        Site réalisé lors de mon stage durant la formation DWWM.
+                    </p>
+                </div>
+
+                <!-- Projet 4 : Geekothéque-->
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
+                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-2xl font-bold text-jokerGreen mb-2">Geekothéque</h3>
+                    <p class="text-base text-neutralDark dark:text-neutralLight">
+                        Appli Synfony de gestion de bibliothèque. <br>
+                        <strong>Fonctionnalités :</strong> interface de prêts/retours, statistiques, gestion des
+                        lecteurs <br>
+                        Se rapproche de l'application Bibli'o mais avec un thème Geek.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION COMPETENCES -->
+        <section id="competences" class="space-y-8 mt-20">
+            <h2 class="text-3xl font-bold text-jokerPurple uppercase"> Compétences</h2>
+            <!-- LANGAGES & TECHNOLOGIES -->
+            <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-jokerGreen"> Langages & Technologies</h3>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">HTML <span
+                            class="float-right">85%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 85%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">CSS <span
+                            class="float-right">75%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 75%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">JavaScript <span
+                            class="float-right">60%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 60%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Flutter <span
+                            class="float-right">55%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 55%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Angular <span
+                            class="float-right">45%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 45%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Java <span
+                            class="float-right">65%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 65%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Python<span
+                            class="float-right">70%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">COBOL <span
+                            class="float-right">25%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 25%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">PHP<span
+                            class="float-right">75%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 75%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">SQL <span
+                            class="float-right">65%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 65%;">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- FRAMEWORKS & OUTILS -->
+            <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-jokerPurple"> Frameworks & Outils</h3>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Spring Boot <span
+                            class="float-right">60%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 60%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Docker <span
+                            class="float-right">50%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 50%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Git <span
+                            class="float-right">70%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 70%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Tailwind <span
+                            class="float-right">50%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 50%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Postman <span
+                            class="float-right">80%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 80%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Figma <span
+                            class="float-right">75%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 75%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">JSON <span
+                            class="float-right">75%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 75%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MÉTHODOLOGIES -->
+            <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-jokerGreen"> Méthodologies</h3>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">POO <span
+                            class="float-right">80%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 80%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Scrum <span
+                            class="float-right">70%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">TDD <!--Test Driven Development--> <span
+                            class="float-right">40%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 40%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">UML - MCD <span
+                            class="float-right">70%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Gestion de projet - Agile / Trello / Notion <span
+                            class="float-right">75%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 75%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Workflow Git <span
+                            class="float-right">70%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-medium text-neutralDark dark:text-neutralLight">Clean Code <span
+                            class="float-right">85%</span></p>
+                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
+                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 85%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- <div class="grid md:grid-cols-2 gap-6 text-center text-lg">
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
+                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Langages & Techs</h3>
+                    <p>Java, Python, HTML, CSS, JavaScript, SQL, Bash</p>
+                </div>
+
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
+                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Frameworks & Outils</h3>
+                    <p>Spring Boot, Tailwind CSS, Flutter, Git, GitHub, Docker</p>
+                </div>
+
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
+                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Méthodologies</h3>
+                    <p>POO, REST API, MVC, Agile, TDD (début), UML</p>
+                </div>
+
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
+                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Soft skills</h3>
+                    <p>Résilience, gestion du stress, autonomie, écoute, esprit d'équipe</p>
+                </div>
+            </div> -->
+        </section>
+
+    </main>
+
+    <script src="./asset/JS/mode.js" defer></script>
+    <script src="./asset/JS/matrixTypewriter.js" defer></script>
+</body>
+
+</html>
