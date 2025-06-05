@@ -134,8 +134,10 @@
                     <h2 class="text-2xl font-bold text-jokerPurple underline mb-4">Expériences</h2>
                     <div class="relative overflow-x-auto">
                         <table class="table-fixed text-base text-left text-neutralLight">
-                            <thead class="text-neutralDark dark:text-neutralLight font-bold bg-neutralLight dark:bg-neutralDark ">
-                                <tr class="border-b border-jokerPurple bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                            <thead
+                                class="text-neutralDark dark:text-neutralLight font-bold bg-neutralLight dark:bg-neutralDark ">
+                                <tr
+                                    class="border-b border-jokerPurple bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
                                     <th class="w-[120px]">Année</th>
                                     <th class="w-[250px]">Poste</th>
                                     <th>Lieu</th>
@@ -187,8 +189,10 @@
                     <h2 class="text-2xl font-bold text-jokerPurple underline mb-4">Formations</h2>
                     <div class="relative overflow-x-auto">
                         <table class="table-fixed text-base text-left text-neutralLight">
-                            <thead class="text-neutralDark dark:text-neutralLight font-bold bg-neutralLight dark:bg-neutralDark ">
-                                <tr class="border-b border-jokerPurple bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                            <thead
+                                class="text-neutralDark dark:text-neutralLight font-bold bg-neutralLight dark:bg-neutralDark ">
+                                <tr
+                                    class="border-b border-jokerPurple bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
                                     <th class="w-[120px]">Année</th>
                                     <th class="w-[480px]">Titre</th>
                                     <th class="w-[300px]">Centre - Lieu</th>
@@ -394,8 +398,8 @@
                     </div>
                 </div>
 
-                <div
-              +      class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                <div +
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
                     hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
                     <img src="./asset/image/geekclic.png" alt="nom preview" onclick="openPopup('#popupGeek')"
                         class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
@@ -907,7 +911,6 @@
             </p>
             <div class="bg-neutralLight dark:bg-neutralDark shadow-lg max-w-xl mx-auto">
                 <form action="https://formspree.io/f/xpwrwngd" method="POST" class="space-y-4">
-                   
                     <div>
                         <label for="email"
                             class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Email</label>
@@ -925,6 +928,10 @@
                         Envoyer
                     </button>
                 </form>
+                <div id="formStatus" class="hidden text-center text-green-500 mt-4">
+                    Message envoyé avec succès !
+                </div>
+
             </div>
         </section>
     </main>
@@ -948,6 +955,7 @@
     <script src="./asset/JS/mode.js" defer></script>
     <script src="./asset/JS/matrixTypewriter.js" defer></script>
     <script src="./asset/js/popup.js"></script>
+    <script src="./asset/JS/form.js"></script>
 
 
 </body>
