@@ -9,48 +9,88 @@
     <link rel="stylesheet" href="dist/style.css" />
 </head>
 
+<!------------------------------------------ BODY DE MON HTML ------------------------------------------------------------->
 
 <body class="bg-neutralLight text-neutralDark dark:bg-neutralDark dark:text-neutralLight font-sans">
-    <!-- HEADER -->
-    <header class="p-6 flex flex-col md:flex-row justify-between items-center border-b border-jokerPurple relative">
-        <!-- Animation Texte -->
-        <div id="matrixTypewriter" class="text-3xl font-extrabold text-jokerGreen tracking-widest">
+    <!------------------------------------------ HEADER ----------------------------------------------------------------------->
+    <header class="p-6 flex flex-col md:flex-row justify-between items-center bg-jokerGreen relative">
+
+        <!-- Animation Texte en haut à gauche-->
+        <div id="matrixTypewriter" class="text-3xl font-extrabold text-neutralDark tracking-widest">
             <span id="animatedName"></span>
         </div>
-        <!-- Phrase poétique FIXE au centre -->
-        <div class="absolute inset-0 flex justify-center items-center pointer-events-none z-10">
-            <p
-                class="text-center text-2xl italic font-semibold text-neutralDark dark:text-neutralLight transition duration-300 px-4">
-                J’écris du code comme d'autres écrivent des poèmes : avec âme et méthode
-            </p>
+
+        <!-- Phrase fixe au centre -->
+        <div class="hidden md:flex absolute inset-0 justify-center items-center pointer-events-none z-10">
+              <p
+                class="text-center text-xl lg:text-2xl xl:text-3xl italic font-semibold text-neutralDark transition duration-300 px-4">
+                    J’écris du code comme d'autres écrivent des poèmes : avec âme et méthode !
+                  </p>
         </div>
+
         <!-- Mode Sombre / Clair -->
-        <div class="relative w-16 h-9 bg-jokerGreen rounded-full cursor-pointer transition-all duration-500"
+        <div class="relative w-16 h-9 bg-neutralDark rounded-full cursor-pointer transition-all duration-500"
             id="themeToggle">
             <!-- Soleil -->
-            <img src="asset/image/sun1.png" alt="mode clair"
+            <img src="asset/image/sun.png" alt="mode clair"
                 class="absolute top-1 left-1 w-7 h-7 transition-all duration-300" id="sunIcon">
             <!-- Lune -->
-            <img src="asset/image/moon1.png" alt="mode sombre"
+            <img src="asset/image/moon.png" alt="mode sombre"
                 class="absolute top-1 right-1 w-7 h-7 opacity-0 transition-all duration-300" id="moonIcon">
         </div>
+
+        <!-----------------------------------------------NAVBAR SCROLL----------------------------------------------------------------->
+        <nav
+            class="hidden sm:flex fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-neutralDark/80 dark:bg-neutralLight/10 backdrop-blur-md px-6 py-3 rounded-full justify-between items-center gap-6 shadow-xl">
+
+            <a href="#accueil" class="group">
+                <div
+                    class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
+                    <img src="./asset/image/homePurple.png" alt="Accueil" class="h-10 w-10" />
+                </div>
+            </a>
+
+            <a href="#a-propos" class="group">
+                <div
+                    class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
+                    <img src="./asset/image/aboutPurple.png" alt="À propos" class="h-10 w-10" />
+                </div>
+            </a>
+
+            <a href="#projets" class="group">
+                <div
+                    class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
+                    <img src="./asset/image/projectPurple.png" alt="Projets" class="h-10 w-10" />
+                </div>
+            </a>
+
+            <a href="#competences" class="group">
+                <div
+                    class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
+                    <img src="./asset/image/skillPurple.png" alt="Compétences" class="h-10 w-10" />
+                </div>
+            </a>
+
+            <a href="#contact" class="group">
+                <div
+                    class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
+                    <img src="./asset/image/contactPurple.png" alt="Contact" class="h-10 w-10" />
+                </div>
+            </a>
+        </nav>
     </header>
+    <img src="./asset/image/header.png" alt="Image de pied de page" class="w-full h-auto  object-cover object-center">
 
-
-
-
-
-
-
-
-    <main class="p-6 max-w-5xl mx-auto space-y-24">
-        <!--SECTION ACCUEIL-->
+    <!------------------------------------------ MAIN ----------------------------------------------------------------------->
+    <main class="p-6 max-w-7xl mx-auto space-y-24">
+        <!--------------------------------------SECTION ACCUEIL-------------------------------------------------------------->
         <section id="accueil" class="space-y-2 mt-10 ">
             <h2 class="text-lg font-sans leading-relaxed text-center">Hello ! Je suis </h2>
             <h2 class="text-2xl font-bold text-center text-jokerPurple uppercase">Jonathan Auroux-Martel</h2>
             <h2 class="text-lg font-sans leading-relaxed text-center">Codeur</h2>
             <div class="flex justify-center">
-                <button class="bg-jokerPurple text-white px-6 py-3 rounded-md shadow hover:bg-jokerGreen transition ">
+                <button
+                    class="bg-jokerPurple text-white px-6 py-3  mb-[50px] rounded-md shadow hover:bg-jokerGreen transition ">
                     <!-- ATTENTION :
                         Quand on utilise target="_blank", toujours ajouter : rel="noopener noreferrer"
                         - noopener : empêche la page ouverte d’avoir accès à window.opener (sécurité)
@@ -60,11 +100,146 @@
                         rel="noopener noreferrer">Télécharger mon CV</a>
                 </button>
             </div>
-
+            <img src="./asset/image/jo0ker.png" alt="Jonathan Auroux-Martel" class="w-auto h-[550px] mx-auto  ">
         </section>
-        <!-- SECTION A PROPOS -->
+
+        <!--------------------------------------SECTION A PROPOS-------------------------------------------------------------->
         <section id="a-propos" class="space-y-4">
-            <h2 class="text-3xl font-bold text-jokerPurple uppercase">À propos</h2>
+            <!----------------------------- BOUTONS TOGGLE ------------------------------------------------------------>
+
+            <div class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                <button id="btnExperience" onClick="openPopup('#popupExperience')"
+                    class="px-4 py-2 rounded-r-full bg-jokerPurple text-white text-2xl hover:bg-jokerGreen transition">
+                    Expériences
+                </button>
+            </div>
+
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+                <button id="btnFormation" onClick="openPopup('#popupFormation')"
+                    class="px-4 py-2 rounded-l-full bg-jokerPurple text-white text-2xl hover:bg-jokerGreen transition">
+                    Formations
+                </button>
+            </div>
+
+            <h2
+                class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
+                À propos</h2>
+
+            <!----------------------------- POPUP A PROPOS ------------------------------------------------------------>
+            <!----------------------------- POPUP EXPÉRIENCE ---------------------------------------------------------->
+            <div id="popupExperience" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                aria-hidden="true" onclick="if(event.target === this) closePopup('#popupExperience')">
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-[1400px]">
+                    <h2 class="text-2xl font-bold text-jokerPurple underline mb-4">Expériences</h2>
+                    <div class="relative overflow-x-auto">
+                        <table class="table-fixed text-base text-left text-neutralLight">
+                            <thead class="text-neutralDark dark:text-neutralLight font-bold bg-neutralLight dark:bg-neutralDark ">
+                                <tr class="border-b border-jokerPurple bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <th class="w-[120px]">Année</th>
+                                    <th class="w-[250px]">Poste</th>
+                                    <th>Lieu</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-neutralDark dark:text-neutralLight">
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2024</td>
+                                    <td>Stagiaire Développeur web</td>
+                                    <td>LM Le Mées - Mées</td>
+                                    <td>Développement d'un site vitrine sous Symfony, avec une interface
+                                        administrateur pour la gestion de la carte.</td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2022</td>
+                                    <td>Stagiaire Développeur web</td>
+                                    <td>Mairie de Dax - Dax</td>
+                                    <td>Développement d'une application mobile sous Angular pour Dax, la Féria !</td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2015 - 2021</td>
+                                    <td>Technicien Télécom</td>
+                                    <td>Orange - Auch</td>
+                                    <td>Installation et maintenance PABX, routeur, switch. Mise en service de ligne
+                                        cuivre et fibre.</td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>1998 - 2014</td>
+                                    <td>Cuisine -> Apprenti à Chef </td>
+                                    <td>Divers établissements - France & Espagne</td>
+                                    <td>Gestion d'équipe, création de menus, gestion des stocks.</td>
+                                </tr>
+
+                        </table>
+                    </div>
+
+
+                    <button onclick="closePopup('#popupExperience')"
+                        class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                </div>
+            </div>
+
+            <!-- POPUP FORMATION -->
+            <div id="popupFormation" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                aria-hidden="true" onclick="if(event.target === this) closePopup('#popupFormation')">
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-[1400px]">
+                    <h2 class="text-2xl font-bold text-jokerPurple underline mb-4">Formations</h2>
+                    <div class="relative overflow-x-auto">
+                        <table class="table-fixed text-base text-left text-neutralLight">
+                            <thead class="text-neutralDark dark:text-neutralLight font-bold bg-neutralLight dark:bg-neutralDark ">
+                                <tr class="border-b border-jokerPurple bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <th class="w-[120px]">Année</th>
+                                    <th class="w-[480px]">Titre</th>
+                                    <th class="w-[300px]">Centre - Lieu</th>
+                                    <th class="w-[500px]">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-neutralDark dark:text-neutralLight">
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2024 - 2025</td>
+                                    <td>Concepteur développeur d'application</td>
+                                    <td>AFPA - Mont-de-Marsan</td>
+                                    <td>Bac +3/4 </td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2024</td>
+                                    <td>Développeur web & web mobile</td>
+                                    <td>ACGD Formation - Angoumé</td>
+                                    <td>Bac +2 </td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2022</td>
+                                    <td>Développeur web & web mobile</td>
+                                    <td>AEN - Agen</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2016</td>
+                                    <td>Technicien réseaux et télécommunications d'entreprise/td>
+                                    <td>AFPA / Orange - Toulouse</td>
+                                    <td>Bac +2</td>
+                                </tr>
+                                <tr class="bg-neutralLight dark:bg-neutralDark hover:bg-neutralGreen/10">
+                                    <td>2012 - 2014</td>
+                                    <td>BTS Système Numérique option A - Informatique et Réseaux</td>
+                                    <td>CNED - À distance</td>
+                                    <td>Diplôme non validé car aucun stage validé</td>
+                                </tr>
+
+                        </table>
+                    </div>
+
+                    <button onclick="closePopup('#popupExperience')"
+                        class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                </div>
+            </div>
+
+
+
+
+            <!----------------------------- CONTENU A PROPOS ------------------------------------------------------------>
+
             <p class="text-lg leading-relaxed">
                 Je n'ai pas un parcours lisse. Je n'ai pas coché toutes les cases. Et tu sais quoi ?
                 <span class="text-xl font-bold text-jokerGreen">Tant mieux.</span>
@@ -112,42 +287,93 @@
 
         <!-- SECTION PORJETS / PORTFOLIO -->
         <section id="projets" class="space-y-4">
-            <h2 class="text-3xl font-bold text-jokerPurple uppercase">
+            <h2
+                class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
                 Mes Projets
             </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mt-10">
+            <div class="grid lg:grid-cols-2 gap-8 mt-10">
 
                 <!-- Projet 1 : IdentyQuest -->
+                <div id="popupApp" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                    aria-hidden="true" onclick="if(event.target === this) closePopup('#popupApp')">
+                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/appFull.png" alt="Preview Bibli'o"
+                            class="w-full h-auto max-h-[80vh] object-contain rounded mb-4">
+                        <button onclick="closePopup('#popupApp')"
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+
                 <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
-                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
+                    <img src="./asset/image/appClic.png" alt="nom preview" onclick="openPopup('#popupApp')"
+                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
                     <h3 class="text-2xl font-bold text-jokerGreen mb-2"> IdentyQuest</h3>
-                    <p class="text-base text-neutralDark dark:text-neutralLight">
-                        Application d'exploration identitaire & neurodivergence. <br>
+                    <p class="text-base font-bold text-neutralDark dark:text-neutralLight">
+                        Application d'exploration identitaire & neurodivergence.
+                    </p>
+                    <p class="text-base font-normal">
                         <strong>Stack :</strong> Spring Boot (backend), Flutter (frontend), base de données intégrée.
-                        <br> Journal introspectif, rappels, tests, annuaire pro... Un projet de cœur 💚.
+                    </p>
+                    <p class="text-base font-normal">
+                        <strong>Fonctionnalités :</strong> Journal introspectif, rappels, tests, annuaire pro... Un
+                        projet de cœur 💚.
                     </p>
                 </div>
 
                 <!-- Projet 2 : Bibli'o -->
+                <div id="popupBiblio" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                    aria-hidden="true" onclick="if(event.target === this) closePopup('#popupBiblio')">
+                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/bibliofull.png" alt="Preview Bibli'o"
+                            class="w-full h-auto max-h-[80vh] object-contain rounded mb-4">
+                        <button onclick="closePopup('#popupBiblio')"
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                    </div>
+                </div>
+
                 <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
-                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
+                    <img src="./asset/image/biblioclic.png" alt="nom preview" onclick="openPopup('#popupBiblio')"
+                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
                     <h3 class="text-2xl font-bold text-jokerGreen mb-2"> Bibli’o</h3>
-                    <p class="text-base text-neutralDark dark:text-neutralLight">
-                        Appli Java Swing de gestion de bibliothèque. <br>
+                    <p class="text-base font-bold dark:text-neutralLight">
+                        Appli Java Swing de gestion de bibliothèque.
+                    </p>
+                    <p class="text-base font-normal">
                         <strong>Fonctionnalités :</strong> interface de prêts/retours, statistiques, gestion des
-                        lecteurs. <br>
-                        Bonus : version JavaFX en parallèle pour le dossier professionnel.
+                        lecteurs.
+                    </p>
+                    <p class="text-base font-normal">
+                        <strong>Stack :</strong> Java Swing, base de données H2, Java 21.
+                    </p>
+                    <p class="text-base font-normal">
+                        <strong>Bonus :</strong> version JavaFX en parallèle pour le dossier professionnel.
                     </p>
                 </div>
 
-                <!-- Projet 3 : Le mées-->
-                <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
-                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
 
+                <!-- Projet 3 : Le mées-->
+                <div id="popupLM" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                    aria-hidden="true" onclick="if(event.target === this) closePopup('#popupLM')">
+                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/LM.png" alt="Preview LM Le Mées"
+                            class="w-full h-auto max-h-[80vh] object-contain rounded mb-4">
+                        <button onclick="closePopup('#popupLM')"
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
+                    <img src="./asset/image/1.png" alt="nom preview" onclick="openPopup('#popupLM')"
+                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
                     <h3 class="text-2xl font-bold text-jokerGreen mb-2">LM Le Mées</h3>
                     <p class="text-base text-neutralDark dark:text-neutralLight">
                         Site vitrine développé sous Synfony<br>
@@ -156,11 +382,24 @@
                     </p>
                 </div>
 
-                <!-- Projet 4 : Geekothéque-->
+
+                <!-- Projet 4 : Geekuniverse-->
+                <div id="popupGeek" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                    aria-hidden="true" onclick="if(event.target === this) closePopup('#popupGeek')">
+                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/geekuniverse.png"" alt=" Preview GeekUniverse"
+                            class="w-full rounded mb-4">
+                        <button onclick="closePopup('#popupGeek')"
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                    </div>
+                </div>
+
                 <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg hover:scale-105 transition">
-                    <img src="/assets/images/" alt="nom preview" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-2">Geekothéque</h3>
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
+                    <img src="./asset/image/geekclic.png" alt="nom preview" onclick="openPopup('#popupGeek')"
+                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
+                    <h3 class="text-2xl font-bold text-jokerGreen mb-2">GeekUniverse</h3>
                     <p class="text-base text-neutralDark dark:text-neutralLight">
                         Appli Synfony de gestion de bibliothèque. <br>
                         <strong>Fonctionnalités :</strong> interface de prêts/retours, statistiques, gestion des
@@ -168,252 +407,34 @@
                         Se rapproche de l'application Bibli'o mais avec un thème Geek.
                     </p>
                 </div>
+
+
+            </div>
+
+            <div class="flex justify-center space-y-2 mt-6">
+                <button
+                    class="bg-jokerPurple text-white font-bold px-6 py-3 rounded-md shadow hover:bg-jokerGreen transition ">
+                    <a href="https://github.com/Jo0ker64" target="_blank" rel="noopener noreferrer">Lien
+                        vers mon Github</a>
+                </button>
             </div>
         </section>
 
         <!-- SECTION COMPETENCES -->
+        <!-- De chaque coté mettre un bouton pour ouvrir sur expérience pro et l'autre formation-->
         <section id="competences" class="space-y-8 mt-20">
-            <h2 class="text-3xl font-bold text-jokerPurple uppercase"> Compétences</h2>
-            <!-- LANGAGES & TECHNOLOGIES -->
-            <div class="space-y-4">
-                <h3 class="text-2xl font-semibold text-jokerGreen"> Langages & Technologies</h3>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">HTML <span
-                            class="float-right">85%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 85%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">CSS <span
-                            class="float-right">75%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 75%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">JavaScript <span
-                            class="float-right">60%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 60%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Flutter <span
-                            class="float-right">55%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 55%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Angular <span
-                            class="float-right">45%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 45%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Java <span
-                            class="float-right">65%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 65%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Python<span
-                            class="float-right">70%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">COBOL <span
-                            class="float-right">25%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 25%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">PHP<span
-                            class="float-right">75%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 75%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">SQL <span
-                            class="float-right">65%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 65%;">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- FRAMEWORKS & OUTILS -->
-            <div class="space-y-4">
-                <h3 class="text-2xl font-semibold text-jokerPurple"> Frameworks & Outils</h3>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Spring Boot <span
-                            class="float-right">60%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 60%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Docker <span
-                            class="float-right">50%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 50%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Git <span
-                            class="float-right">70%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 70%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Tailwind <span
-                            class="float-right">50%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 50%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Postman <span
-                            class="float-right">80%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 80%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Figma <span
-                            class="float-right">75%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 75%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">JSON <span
-                            class="float-right">75%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerPurple rounded-full transition-all duration-500" style="width: 75%;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MÉTHODOLOGIES -->
-            <div class="space-y-4">
-                <h3 class="text-2xl font-semibold text-jokerGreen"> Méthodologies</h3>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">POO <span
-                            class="float-right">80%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 80%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Scrum <span
-                            class="float-right">70%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">TDD <!--Test Driven Development-->
-                        <span class="float-right">40%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 40%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">UML - MCD <span
-                            class="float-right">70%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Gestion de projet - Agile / Trello /
-                        Notion <span class="float-right">75%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 75%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Workflow Git <span
-                            class="float-right">70%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 70%;">
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-medium text-neutralDark dark:text-neutralLight">Clean Code <span
-                            class="float-right">85%</span></p>
-                    <div class="w-full h-3 bg-neutral-200 dark:bg-neutral-700 rounded-full">
-                        <div class="h-3 bg-jokerGreen rounded-full transition-all duration-500" style="width: 85%;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- LANGAGES & TECHNOLOGIES -->
-                <div class="bg-neutralLight dark:bg-neutralDark border border-jokerGreen rounded-xl p-6 shadow-lg">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-4">Langages & Technologies</h3>
-                    <div class="flex flex-wrap gap-4 justify-center">
-                        <!-- Exemple HTML -->
-                        <div class="relative w-32 h-32">
-                            <p>HTML</p>
+            <!-- Titre -->
+            <h2
+                class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
+                Compétences</h2>
+            <div class="flex flex-col gap-6 text-center text-lg">
+                <div class="bg-neutralLight dark:bg-neutralDark border border-jokerGreen/30 hover:border-jokerGreen/30 
+                    hover:shadow-[0_0_30px_rgba(57,255,20,0.35)] p-6 rounded-xl transition duration-300">
+                    <!--LANGAGE & TECHNO-->
+                    <h3 class="text-jokerGreen font-bold text-xl mb-4 text-center">Langages & Techs</h3>
+                    <div class="flex flex-wrap gap-6 justify-center">
+                        <!-- HTML -->
+                        <div class="relative w-40 h-40">
                             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                                 <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
                                     cx="18" cy="18" r="15.915" />
@@ -421,85 +442,519 @@
                                     stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
                             </svg>
                             <div
-                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerGreen">
-                                85%</div>
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                HTML 85%
+                            </div>
                         </div>
-                        <!-- Répéter le bloc pour chaque techno -->
-                    </div>
-                </div>
 
-                <!-- FRAMEWORKS & OUTILS -->
-                <div class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple rounded-xl p-6 shadow-lg">
-                    <h3 class="text-2xl font-bold text-jokerPurple mb-4">Frameworks & Outils</h3>
-                    <div class="flex flex-wrap gap-4 justify-center">
-                        <!-- Exemple Git -->
-                        <div class="relative w-32 h-32">
+                        <!-- CSS -->
+                        <div class="relative w-40 h-40">
                             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                                 <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
                                     cx="18" cy="18" r="15.915" />
-                                <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="70, 100"
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="75, 100"
                                     stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
                             </svg>
                             <div
-                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerPurple">
-                                70%</div>
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                CSS 75%
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- MÉTHODOLOGIES -->
-                <div class="bg-neutralLight dark:bg-neutralDark border border-jokerGreen rounded-xl p-6 shadow-lg">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-4">Méthodologies</h3>
-                    <div class="flex flex-wrap gap-4 justify-center">
-                        <!-- Exemple Clean Code -->
-                        <div class="relative w-32 h-32">
+                        <!-- JavaScript -->
+                        <div class="relative w-40 h-40">
                             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                                 <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
                                     cx="18" cy="18" r="15.915" />
-                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="85, 100"
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="60, 100"
                                     stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
                             </svg>
                             <div
-                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerGreen">
-                                85%</div>
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                JS 60%
+                            </div>
+                        </div>
+
+                        <!-- Flutter -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="55, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                Flutter 55%
+                            </div>
+                        </div>
+
+                        <!-- Angular -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="45, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                Angular 45%
+                            </div>
+                        </div>
+
+                        <!-- Java -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="65, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                Java 65%
+                            </div>
+                        </div>
+
+                        <!-- Python -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="70, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                Python 70%
+                            </div>
+                        </div>
+
+                        <!-- COBOL -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="25, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                COBOL 25%
+                            </div>
+                        </div>
+
+                        <!-- PHP -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="75, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                PHP 75%
+                            </div>
+                        </div>
+
+                        <!-- SQL -->
+                        <div class="relative w-40 h-40">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor" fill="none"
+                                    cx="18" cy="18" r="15.915" />
+                                <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="65, 100"
+                                    stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                            </svg>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                SQL 65%
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <div class="flex flex-col gap-6 text-center text-lg">
+                    <div class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                        hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300">
+                        <!--FRAMEWORK & OUTILS-->
+                        <h3 class="text-jokerPurple font-bold text-xl mb-4 text-center">Frameworks & Outils</h3>
+                        <div class="flex flex-wrap gap-6 justify-center">
+                            <!-- Spring Boot -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="65, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Spring <br>Boot 65%
+                                </div>
+                            </div>
 
+                            <!--Docker-->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="50, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Docker 50%
+                                </div>
+                            </div>
 
-            <!-- <div class="grid md:grid-cols-2 gap-6 text-center text-lg">
-                <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
-                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Langages & Techs</h3>
-                    <p>Java, Python, HTML, CSS, JavaScript, SQL, Bash</p>
-                </div>
+                            <!-- Git -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="70, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Git 70%
+                                </div>
+                            </div>
 
-                <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
-                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Frameworks & Outils</h3>
-                    <p>Spring Boot, Tailwind CSS, Flutter, Git, GitHub, Docker</p>
-                </div>
+                            <!-- Tailwind -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="50, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Tailwind 50%
+                                </div>
+                            </div>
 
-                <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
-                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Méthodologies</h3>
-                    <p>POO, REST API, MVC, Agile, TDD (début), UML</p>
-                </div>
+                            <!-- Postman -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="80, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Postman 80%
+                                </div>
+                            </div>
 
-                <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple p-6 rounded-xl shadow hover:scale-105 transition">
-                    <h3 class="text-jokerGreen font-semibold text-xl mb-2">Soft skills</h3>
-                    <p>Résilience, gestion du stress, autonomie, écoute, esprit d'équipe</p>
-                </div>
-            </div> -->
+                            <!-- Figma -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="75, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Figma 75%
+                                </div>
+                            </div>
+
+                            <!-- JSON -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="75, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    JSON 75%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutralLight dark:bg-neutralDark border border-jokerGreen/30 hover:border-jokerGreen/30 
+                    hover:shadow-[0_0_30px_rgba(57,255,20,0.35)] p-6 rounded-xl transition duration-300">
+
+                        <!--METHODOLOGIE-->
+                        <h3 class="text-jokerGreen font-bold text-xl mb-4 text-center">Méthodologies</h3>
+                        <div class="flex flex-wrap gap-6 justify-center">
+                            <!-- HTML -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="70, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    POO 70%
+                                </div>
+                            </div>
+
+                            <!-- REST API -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="80, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    REST API 80%
+                                </div>
+                            </div>
+
+                            <!-- MVC -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="75, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    MVC 75%
+                                </div>
+                            </div>
+
+                            <!-- Agile -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="65, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Agile 65%
+                                </div>
+                            </div>
+
+                            <!-- TDD -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="50, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    TDD 50%
+                                </div>
+                            </div>
+
+                            <!-- UML -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="70, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    UML 70%
+                                </div>
+                            </div>
+
+                            <!-- Gestion de projet -->
+                            <div class="relative w-40 h-40">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                        fill="none" cx="18" cy="18" r="15.915" />
+                                    <circle class="text-jokerGreen" stroke-width="3.8" stroke-dasharray="75, 100"
+                                        stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-lg font-bold text-jokerNeutral">
+                                    Gestion <br> de projet 75%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--SOFT SKILL-->
+                    <div class="flex flex-col gap-6 text-center text-lg">
+                        <div class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
+                        hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300">
+                            <!--FRAMEWORK & OUTILS-->
+                            <h3 class="text-jokerPurple font-bold text-xl mb-4 text-center">Soft Skills</h3>
+                            <div class="flex flex-wrap gap-6 justify-center">
+                                <!-- Résilience -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Réslience
+                                    </div>
+                                </div>
+
+                                <!-- Gestion du stress -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Gestion du <br>stress
+                                    </div>
+                                </div>
+
+                                <!-- Autonomie -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Autonomie
+                                    </div>
+                                </div>
+
+                                <!-- Esprit d'équipe -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Esprit d'équipe
+                                    </div>
+                                </div>
+
+                                <!-- Communication -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Communication
+                                    </div>
+                                </div>
+
+                                <!-- Adaptabilité -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Adaptabilité
+                                    </div>
+                                </div>
+
+                                <!-- Curiosité -->
+                                <div class="relative w-40 h-40">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle class="text-neutral-300" stroke-width="3.8" stroke="currentColor"
+                                            fill="none" cx="18" cy="18" r="15.915" />
+                                        <circle class="text-jokerPurple" stroke-width="3.8" stroke-dasharray="85, 100"
+                                            stroke="currentColor" fill="none" cx="18" cy="18" r="15.915" />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-base font-bold text-jokerNeutral">
+                                        Curiosité
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
         </section>
 
-    </main>
 
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="space-y-8 mt-20">
+            <h2
+                class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
+                Contact</h2>
+            <p class="text-lg text-neutralDark dark:text-neutralLight">
+                Vous avez une question, un projet ou simplement envie de discuter ? N'hésitez pas à me contacter via le
+                formulaire ci-dessous.
+            </p>
+            <div class="bg-neutralLight dark:bg-neutralDark shadow-lg max-w-xl mx-auto">
+                <form action="https://formspree.io/f/xyyrrzbp" method="POST" class="space-y-4">
+                    <div>
+                        <label for="name"
+                            class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Nom</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-2 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutralDark dark:text-neutralLight">
+                    </div>
+                    <div>
+                        <label for="email"
+                            class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutralDark dark:text-neutralLight">
+                    </div>
+                    <div>
+                        <label for="message"
+                            class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="w-full px-4 py-2 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutralDark dark:text-neutralLight"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-jokerPurple text-white font-bold px-6 py-2 rounded-md hover:opacity-80 transition w-full">
+                        Envoyer
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <img src="./asset/image/footer2.png" alt="Image de pied de page"
+        class="w-full h-auto mt-10 object-cover object-center">
+    <footer class="w-full bg-jokerGreen text-neutral-300 dark:text-neutral-400 py-10 px-6 text-center">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-neutralDark mb-2">Merci d’être allé jusqu’au bout !</h3>
+            <p class="mb-2 text-neutralDark">Ce portfolio a été codé avec <img src="./asset/image/heart.png"
+                    class="h-6 w-6 inline align-middle" alt="Cœur" title="Cœur">
+                & <img src="./asset/image/coca.png" class="h-6 w-6 inline align-middle" alt="Coca-Cola"
+                    title="Coca-Cola">
+                et une bonne dose de chaos maîtrisé ! <img src="./asset/image/rire.png"
+                    class="h-8 w-auto inline align-middle" alt="Ha ha" title="Ha ha">
+            </p>
+            <p class="text-base text-neutralDark"><img src="./asset/image/copyright.png"
+                    class="h-6 w-6 inline align-middle" alt="copyright" title="copyright"> 2025 Jonathan Martel – Tous
+                droits réservés.</p><br><br>
+        </div>
+    </footer>
     <script src="./asset/JS/mode.js" defer></script>
     <script src="./asset/JS/matrixTypewriter.js" defer></script>
+    <script src="./asset/js/popup.js"></script>
+
+
 </body>
 
 </html>

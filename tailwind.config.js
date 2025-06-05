@@ -8,6 +8,9 @@ module.exports = {
         jokerPurple: "#6a0dad",
         neutralDark: "#303030",
         neutralLight: "#d9d9d9",
+        jokerGray: "#c0c0c0",
+        jokerRed: "#ff0000",
+        jokerWhite: "#f5f5f5"
       },
       animation: {
         glitch: "glitch 1s infinite linear",
