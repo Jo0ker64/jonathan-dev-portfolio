@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./asset/image/joker.png" type="image/x-icon">
     <title>Portfolio de Jonathan</title>
     <link rel="stylesheet" href="dist/style.css" />
+    <script src="https://formspree.io/js/formbutton-v1.min.js"></script>
 </head>
 
 <!------------------------------------------ BODY DE MON HTML ------------------------------------------------------------->
@@ -16,20 +17,24 @@
     <header class="p-6 flex flex-col md:flex-row justify-between items-center bg-jokerGreen relative">
 
         <!-- Animation Texte en haut à gauche-->
-        <div id="matrixTypewriter" class="text-3xl font-extrabold text-neutralDark tracking-widest">
-            <span id="animatedName"></span>
+        <div id="matrixWrapper"
+            class="flex justify-center md:justify-start items-center min-h-[100px] md:min-h-[100px] w-full px-4">
+            <div id="matrixTypewriter"
+                class="text-3xl font-extrabold text-neutralDark tracking-widest transition-all duration-300">
+                <span id="animatedName"></span>
+            </div>
         </div>
 
         <!-- Phrase fixe au centre -->
-        <div class="hidden md:flex absolute inset-0 justify-center items-center pointer-events-none z-10">
-              <p
-                class="text-center text-xl lg:text-2xl xl:text-3xl italic font-semibold text-neutralDark transition duration-300 px-4">
-                    J’écris du code comme d'autres écrivent des poèmes : avec âme et méthode !
-                  </p>
+        <div class="absolute inset-0 justify-center items-center pointer-events-none z-10 hidden md:flex">
+            <p id="centralText"
+                class="opacity-0 translate-y-4 animate-fade-slide text-center italic font-semibold text-neutralDark transition duration-300 px-4">
+                Développeur atypique, créatif et radicalement humain.
+            </p>
         </div>
 
         <!-- Mode Sombre / Clair -->
-        <div class="relative w-16 h-9 bg-neutralDark rounded-full cursor-pointer transition-all duration-500"
+        <div class="fixed top-4 right-4 w-16 h-9 bg-neutralDark rounded-full cursor-pointer transition-all duration-500 z-50"
             id="themeToggle">
             <!-- Soleil -->
             <img src="asset/image/sun.png" alt="mode clair"
@@ -68,13 +73,6 @@
                 <div
                     class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
                     <img src="./asset/image/skillPurple.png" alt="Compétences" class="h-10 w-10" />
-                </div>
-            </a>
-
-            <a href="#contact" class="group">
-                <div
-                    class="p-2 rounded-full transition duration-300 group-hover:bg-jokerGreen group-hover:shadow-[0_0_10px_#39ff14]">
-                    <img src="./asset/image/contactPurple.png" alt="Contact" class="h-10 w-10" />
                 </div>
             </a>
         </nav>
@@ -175,9 +173,10 @@
                         </table>
                     </div>
 
-
                     <button onclick="closePopup('#popupExperience')"
-                        class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                        class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                        Fermer
+                    </button>
                 </div>
             </div>
 
@@ -230,17 +229,15 @@
                                     <td>CNED - À distance</td>
                                     <td>Diplôme non validé car aucun stage validé</td>
                                 </tr>
-
                         </table>
                     </div>
 
                     <button onclick="closePopup('#popupExperience')"
-                        class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                        class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                        Fermer
+                    </button>
                 </div>
             </div>
-
-
-
 
             <!----------------------------- CONTENU A PROPOS ------------------------------------------------------------>
 
@@ -289,6 +286,26 @@
             </p>
         </section>
 
+        <section id="dispo" class="space-y-4">
+            <h2
+                class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
+                Disponibilité & Objectifs</h2>
+            <p class="text-lg leading-relaxed">
+                Actuellement en fin de formation CDA, je suis <strong>disponible pour une alternance</strong> dans le
+                cadre de la préparation du
+                <strong>mastère Expert en Architecture et Développement Logiciel</strong>, proposé par
+                <a href="https://www.eni-ecole.fr/formations/developpement/formation-expert-en-architecture-et-developpement-logiciel-bac5/"
+                    target="_blank" class="text-jokerGreen">
+                    ENI École Informatique.</a>
+            </p>
+            <p class="text-lg leading-relaxed">
+                Passionné par le <strong>développement back-end</strong>, je cherche à rejoindre une équipe où l’on code
+                avec rigueur… sans se prendre trop au sérieux. Curieux et polyvalent, je reste également ouvert aux
+                missions
+                <strong>front-end</strong> quand le projet le mérite.
+            </p>
+        </section>
+
         <!-- SECTION PORJETS / PORTFOLIO -->
         <section id="projets" class="space-y-4">
             <h2
@@ -298,121 +315,250 @@
 
             <div class="grid lg:grid-cols-2 gap-8 mt-10">
 
-                <!-- Projet 1 : IdentyQuest -->
+                <!--PROJET 1 -->
+                <!-- POPUP IMAGE GRAND FORMAT -->
                 <div id="popupApp" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
                     aria-hidden="true" onclick="if(event.target === this) closePopup('#popupApp')">
-                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
-                        <img src="./asset/image/appFull.png" alt="Preview Bibli'o"
-                            class="w-full h-auto max-h-[80vh] object-contain rounded mb-4">
+                    <div class="bg-neutralDark text-white p-6 md:p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/appFull.png" alt="Aperçu complet IdentyQuest"
+                            class="w-full h-auto max-h-[70vh] object-contain rounded mb-4">
                         <button onclick="closePopup('#popupApp')"
                             class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
                             Fermer
                         </button>
                     </div>
                 </div>
-
+                <!-- CARTE PROJET -->
                 <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
-                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
-                    <img src="./asset/image/appClic.png" alt="nom preview" onclick="openPopup('#popupApp')"
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-[1.02]">
+                    <!-- IMAGE CLIQUABLE -->
+                    <img src="./asset/image/appClic.png" alt="Aperçu IdentyQuest" onclick="openPopup('#popupApp')"
                         class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-2"> IdentyQuest</h3>
-                    <p class="text-base font-bold text-neutralDark dark:text-neutralLight">
-                        Application d'exploration identitaire & neurodivergence.
-                    </p>
-                    <p class="text-base font-normal">
-                        <strong>Stack :</strong> Spring Boot (backend), Flutter (frontend), base de données intégrée.
-                    </p>
-                    <p class="text-base font-normal">
-                        <strong>Fonctionnalités :</strong> Journal introspectif, rappels, tests, annuaire pro... Un
-                        projet de cœur 💚.
-                    </p>
+                    <!-- INFOS PROJET -->
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-jokerGreen">IdentyQuest</h3>
+                        <p class="text-lg text-neutralDark dark:text-neutralLight italic">
+                            Application d'exploration identitaire & neurodivergence
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🛠️ Stack :</strong> Flutter (Front), Spring Boot (API), MySQL.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🎯 Objectif :</strong> Offrir un espace sécurisé pour suivre ses émotions, ses
+                            rendez-vous et explorer son identité personnelle & neuroatypique.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>📚 Ce que j'ai appris :</strong> Connexion Flutter ↔ Spring Boot, conception d'API
+                            RESTful, gestion des DTOs, base de données relationnelle, responsive UI.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🧩 Contexte :</strong> Né d’un besoin personnel, ce projet a été entièrement pensé,
+                            designé et développé par mes soins pour aider les personnes neuroatypiques à mieux se
+                            comprendre et s’orienter, tout en consolidant mes compétences back-end et mobile, acquise
+                            lors de la formation Concepteur Développeur d'Application.
+                        </p>
+                        <!-- LIENS -->
+                        <div class="pt-2 flex flex-wrap gap-4 text-sm font-medium">
+                            <a href="https://github.com/Jo0ker64/identyQuest" target="_blank"
+                                class="text-jokerGreen   transition">🔗 GitHub</a>
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">🚀 Démo</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Projet 2 : Bibli'o -->
+                <!--PROJET 2 -->
+                <!-- POPUP IMAGE GRAND FORMAT -->
                 <div id="popupBiblio" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
                     aria-hidden="true" onclick="if(event.target === this) closePopup('#popupBiblio')">
-                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
-                        <img src="./asset/image/bibliofull.png" alt="Preview Bibli'o"
-                            class="w-full h-auto max-h-[80vh] object-contain rounded mb-4">
+                    <div class="bg-neutralDark text-white p-6 md:p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/bibliofull.png" alt="Aperçu complet Bibli'o"
+                            class="w-full h-auto max-h-[70vh] object-contain rounded mb-4">
                         <button onclick="closePopup('#popupBiblio')"
-                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                            Fermer
+                        </button>
                     </div>
                 </div>
 
+                <!-- CARTE PROJET -->
                 <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
-                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
-                    <img src="./asset/image/biblioclic.png" alt="nom preview" onclick="openPopup('#popupBiblio')"
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-[1.02]">
+                    <!-- IMAGE CLIQUABLE -->
+                    <img src="./asset/image/biblioclic.png" alt="Aperçu Bibli'o" onclick="openPopup('#popupBiblio')"
                         class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-2"> Bibli’o</h3>
-                    <p class="text-base font-bold dark:text-neutralLight">
-                        Appli Java Swing de gestion de bibliothèque.
-                    </p>
-                    <p class="text-base font-normal">
-                        <strong>Fonctionnalités :</strong> interface de prêts/retours, statistiques, gestion des
-                        lecteurs.
-                    </p>
-                    <p class="text-base font-normal">
-                        <strong>Stack :</strong> Java Swing, base de données H2, Java 21.
-                    </p>
-                    <p class="text-base font-normal">
-                        <strong>Bonus :</strong> version JavaFX en parallèle pour le dossier professionnel.
-                    </p>
+                    <!-- INFOS PROJET -->
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-jokerGreen">Bibli'o</h3>
+                        <p class="text-lg text-neutralDark dark:text-neutralLight italic">
+                            Application de gestion de bibliothèque locale.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🛠️ Stack :</strong> Java 21, Swing, H2 Database.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🎯 Objectif :</strong> Permettre à un bibliothécaire de suivre les livres, les
+                            emprunts/retours et les utilisateurs.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>📚 Ce que j'ai appris :</strong> Utilisation avancée de Java Swing, design MVC,
+                            gestion CRUD en local, bonus avec JavaFX pour interface moderne.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🧩 Contexte :</strong> Application développée dans le cadre de ma formation CDA afin
+                            d’illustrer mes compétences techniques dans le dossier professionnel.
+                        </p>
+                        <!-- LIENS -->
+                        <div class="pt-2 flex flex-wrap gap-4 text-sm font-medium">
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">🔗 GitHub</a>
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">📂 Pas de
+                                démo publique</a>
+                        </div>
+                    </div>
                 </div>
 
 
-                <!-- Projet 3 : Le mées-->
+                <!-- Projet 3 : LM Le Mées -->
                 <div id="popupLM" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
                     aria-hidden="true" onclick="if(event.target === this) closePopup('#popupLM')">
-                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
-                        <img src="./asset/image/LM.png" alt="Preview LM Le Mées"
-                            class="w-full h-auto max-h-[80vh] object-contain rounded mb-4">
+                    <div class="bg-neutralDark text-white p-6 md:p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/LM.png" alt="Aperçu complet LM Le Mées"
+                            class="w-full h-auto max-h-[70vh] object-contain rounded mb-4">
                         <button onclick="closePopup('#popupLM')"
-                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+                <!-- CARTE PROJET -->
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-[1.02]">
+                    <!-- IMAGE CLIQUABLE -->
+                    <img src="./asset/image/1.png" alt="Aperçu LM Le Mées" onclick="openPopup('#popupLM')"
+                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
+                    <!-- INFOS PROJET -->
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-jokerGreen">LM Le Mées</h3>
+                        <p class="text-lg text-neutralDark dark:text-neutralLight italic">
+                            Site vitrine réalisé pour une boulangerie - snacking.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🔧 Stack :</strong> Symfony 7, Twig, CSS3, MySQL.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🎯 Objectif :</strong> Mettre en valeur les produits, la carte et l’identité
+                            visuelle de la boulangerie.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>📚 Ce que j'ai appris :</strong> Mise en place d'un CRUD, sécurisation de
+                            formulaire, intégration avec Twig, upload d’images.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🧩 Contexte :</strong> Projet réalisé de manière totalement autonome durant mon
+                            stage Développeur Web & Web Mobile, sans encadrement technique direct.
+                        </p>
+                        <!-- LIENS -->
+                        <div class="pt-2 flex flex-wrap gap-4 text-sm font-medium">
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">🔗 GitHub</a>
+                            <!--mettre adresse du depot-->
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">🔍 Voir la
+                                démo</a> <!--adresse site-->
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
-                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
-                    <img src="./asset/image/1.png" alt="nom preview" onclick="openPopup('#popupLM')"
-                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-2">LM Le Mées</h3>
-                    <p class="text-base text-neutralDark dark:text-neutralLight">
-                        Site vitrine développé sous Synfony<br>
-                        <strong>Fonctionnalités :</strong> interface admin pour la gestion de la carte. <br>
-                        Site réalisé lors de mon stage durant la formation DWWM.
-                    </p>
-                </div>
 
-
-                <!-- Projet 4 : Geekuniverse-->
+                <!----PROJET 4 ------->
+                <!-- POPUP IMAGE GRAND FORMAT -->
                 <div id="popupGeek" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
                     aria-hidden="true" onclick="if(event.target === this) closePopup('#popupGeek')">
-                    <div class="bg-neutralDark text-white p-8 rounded-xl shadow-xl w-full max-w-3xl">
-                        <img src="./asset/image/geekuniverse.png"" alt=" Preview GeekUniverse"
-                            class="w-full rounded mb-4">
+                    <div class="bg-neutralDark text-white p-6 md:p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/geekuniverse.png" alt="Aperçu complet GeekUniverse"
+                            class="w-full h-auto max-h-[70vh] object-contain rounded mb-4">
                         <button onclick="closePopup('#popupGeek')"
-                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">Fermer</button>
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                            Fermer
+                        </button>
                     </div>
                 </div>
 
-                <div +
-                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple 
-                    hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-105">
-                    <img src="./asset/image/geekclic.png" alt="nom preview" onclick="openPopup('#popupGeek')"
+                <!-- CARTE PROJET -->
+                <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-[1.02]">
+                    <!-- IMAGE CLIQUABLE -->
+                    <img src="./asset/image/geekclic.png" alt="Aperçu GeekUniverse" onclick="openPopup('#popupGeek')"
                         class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer">
-                    <h3 class="text-2xl font-bold text-jokerGreen mb-2">GeekUniverse</h3>
-                    <p class="text-base text-neutralDark dark:text-neutralLight">
-                        Appli Synfony de gestion de bibliothèque. <br>
-                        <strong>Fonctionnalités :</strong> interface de prêts/retours, statistiques, gestion des
-                        lecteurs <br>
-                        Se rapproche de l'application Bibli'o mais avec un thème Geek.
-                    </p>
+                    <!-- INFOS PROJET -->
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-jokerGreen">GeekUniverse</h3>
+                        <p class="text-lg text-neutralDark dark:text-neutralLight italic">
+                            Application web de gestion de bibliothèque sur le thème geek.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🔧 Stack :</strong> Symfony 7, Twig, CSS3, MySQL
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🎯 Objectif :</strong>Développer une base de gestion de prêts, lecteurs et
+                            catalogue, avec une interface admin simple, un public geek.
+
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>📚 Ce que j'ai appris :</strong> Mise en œuvre d’un projet complet Symfony en
+                            autonomie, conception CRUD, gestion du thème, sécurisation de routes.
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🧩 Contexte :</strong> Développée comme projet de fin de formation DWWM, cette
+                            application est une vitrine concrète de mon savoir-faire fullstack.
+                        </p>
+                        <!-- LIENS -->
+                        <div class="pt-2 flex flex-wrap gap-4 text-sm font-medium">
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">🔗 GitHub</a>
+                            <!--mettre adresse du depot-->
+                            <a href="#" target="_blank" class="text-jokerGreen transition">📂 Pas de
+                                démo publique</a> <!--adresse site-->
+                        </div>
+                    </div>
                 </div>
 
-
+                <!-- PROJET 5 -->
+                <!-- <div id="popupLM" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50"
+                    aria-hidden="true" onclick="if(event.target === this) closePopup('#popupLM')">
+                    <div class="bg-neutralDark text-white p-6 md:p-8 rounded-xl shadow-xl w-full max-w-3xl">
+                        <img src="./asset/image/LM.png" alt="Aperçu complet LM Le Mées"
+                            class="w-full h-auto max-h-[70vh] object-contain rounded mb-4">
+                        <button onclick="closePopup('#popupLM')"
+                            class="mt-2 px-4 py-2 bg-jokerGreen text-black font-semibold rounded hover:bg-green-400">
+                            Fermer
+                        </button>
+                    </div>
+                </div> -->
+                <!-- CARTE PROJET -->
+                <!-- <div
+                    class="bg-neutralLight dark:bg-neutralDark border border-jokerPurple/50 hover:border-jokerPurple hover:shadow-[0_0_40px_rgba(138,43,226,0.35)] p-6 rounded-xl transition duration-300 hover:scale-[1.02]"> -->
+                <!-- IMAGE CLIQUABLE -->
+                <!-- <img src="./asset/image/1.png" alt="Aperçu LM Le Mées" onclick="openPopup('#popupLM')"
+                        class="w-full h-40 object-cover rounded-md mb-4 cursor-pointer"> -->
+                <!-- INFOS PROJET -->
+                <!-- <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-jokerGreen">TITRE</h3>
+                        <p class="text-lg text-neutralDark dark:text-neutralLight italic">
+                            DESCRIPTION
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🔧 Stack :</strong> LANGAGE
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>🎯 Objectif :</strong> 
+                        </p>
+                        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                            <strong>📚 Ce que j'ai appris :</strong> 
+                        </p> -->
+                <!-- LIENS -->
+                <!-- <div class="pt-2 flex flex-wrap gap-4 text-sm font-medium">
+                            <a href="https://github.com/tonprofil/projet-lm" target="_blank"
+                                class="text-jokerGreen   transition">🔗 GitHub</a>
+                            <a href="#" target="_blank" class="text-jokerGreen   transition">🔍 Voir la
+                                démo</a>
+                        </div>
+                    </div> -->
             </div>
 
             <div class="flex justify-center space-y-2 mt-6">
@@ -897,52 +1043,56 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
         </section>
 
+        <section id="progression" class="space-y-4">
+            <div class="bg-neutralLight dark:bg-neutralDark p-6 rounded-xl space-y-6">
+                <h2
+                    class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
+                    🕒 Mon parcours</h2>
 
-        <!-- SECTION CONTACT -->
-        <section id="contact" class="space-y-8 mt-20">
-            <h2
-                class="text-3xl font-bold text-jokerPurple hover:text-jokerGreen transition uppercase underline underline-offset-8">
-                Contact</h2>
-            <p class="text-lg text-neutralDark dark:text-neutralLight">
-                Vous avez une question, un projet ou simplement envie de discuter ? N'hésitez pas à me contacter via le
-                formulaire ci-dessous.
-            </p>
-            <div class="bg-neutralLight dark:bg-neutralDark shadow-lg max-w-xl mx-auto">
-                <form action="https://formspree.io/f/xpwrwngd" method="POST">
-                    <label>Email :
-                        <input type="email" name="email" required>
-                    </label>
-                    <label>Message :
-                        <textarea name="message" required></textarea>
-                    </label>
-                    <button type="submit">Envoyer</button>
-                </form>
-                <!-- <form action="https://formspree.io/f/xpwrwngd" method="POST" class="space-y-4">
-                    <div>
-                        <label for="email"
-                            class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Email</label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-2 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutralDark dark:text-neutralLight">
-                    </div>
-                    <div>
-                        <label for="message"
-                            class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Message</label>
-                        <textarea id="message" name="message" rows="4" required
-                            class="w-full px-4 py-2 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutralDark dark:text-neutralLight"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="bg-jokerPurple text-white font-bold px-6 py-2 rounded-md hover:opacity-80 transition w-full">
-                        Envoyer
-                    </button>
-                </form> -->
-                <div id="formStatus" class="hidden text-center text-green-500 mt-4">
-                    Message envoyé avec succès !
-                </div>
+                <ol class="border-l-4 border-jokerPurple space-y-4 pl-6">
+                    <li>
+                        <div class="text-lg leading-relaxed">🧑‍🍳 1998 - 2013</div>
+                        <p class="text-base font-semibold">Carrière en cuisine, jusqu'au poste de chef</p>
+                    </li>
+                    <li>
+                        <div class="text-lg leading-relaxed">📡 2015 - 2021</div>
+                        <p class="text-base font-semibold">Technicien télécom chez Orange (cuivre & fibre)</p>
+                    </li>
+                    <li>
+                        <div class="text-lg leading-relaxed">💻 2022</div>
+                        <p class="text-base font-semibold">Début de reconversion vers le développement web</p>
+                    </li>
+                    <li>
+                        <div class="text-lg leading-relaxed">🎓 2023 - 2025</div>
+                        <p class="text-base font-semibold">Formation DWWM puis CDA (AFPA + projets pro)</p>
+                    </li>
+                    <li>
+                        <div class="text-lg leading-relaxed">🚀 2025</div>
+                        <p class="text-base font-semibold">Préparation du Mastère Expert Dev chez <a
+                                href="https://www.eni-ecole.fr" target="_blank" class="text-jokerPurple underline">ENI
+                                École</a></p>
+                    </li>
+                </ol>
+
+                <!-- <div class="mt-6 space-y-3">
+                    <h3 class="text-2xl font-bold text-jokerGreen">🎯 Objectifs à court / moyen terme</h3>
+                    <ul class="list-disc list-inside text-neutral-700 dark:text-neutral-300">
+                        <li>✔️ Valider mon titre CDA et intégrer un Mastère Dev</li>
+                        <li>✔️ Rejoindre une équipe back-end / fullstack en alternance</li>
+                        <li>✔️ Monter en compétences sur Spring Boot, Docker & Sécu</li>
+                        <li>✔️ Lancer une version bêta d’IdentiQuest courant 2025</li>
+                        <li>✔️ Contribuer à un projet open source en 2026</li>
+                    </ul>
+                </div> -->
 
             </div>
-        </section>
+
+
+
     </main>
     <img src="./asset/image/footer2.png" alt="Image de pied de page"
         class="w-full h-auto mt-10 object-cover object-center">
@@ -958,14 +1108,15 @@
             </p>
             <p class="text-base text-neutralDark"><img src="./asset/image/copyright.png"
                     class="h-6 w-6 inline align-middle" alt="copyright" title="copyright"> 2025 Jonathan Martel – Tous
-                droits réservés.</p><br><br>
+                droits réservés. </p><br><br>
         </div>
     </footer>
 
     <script src="./asset/JS/mode.js" defer></script>
     <script src="./asset/JS/matrixTypewriter.js" defer></script>
     <script src="./asset/JS/PopUp.js"></script>
-    <script src="./asset/JS/form.js"></script>
+    <script src="./asset/js/submitForm.js" defer></script>
+    <script src="./asset/JS/quote.js"></script>
 
 </body>
 
