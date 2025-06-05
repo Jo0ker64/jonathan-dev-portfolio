@@ -910,7 +910,16 @@
                 formulaire ci-dessous.
             </p>
             <div class="bg-neutralLight dark:bg-neutralDark shadow-lg max-w-xl mx-auto">
-                <form action="https://formspree.io/f/xpwrwngd" method="POST" class="space-y-4">
+                <form action="https://formspree.io/f/xpwrwngd" method="POST">
+                    <label>Email :
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>Message :
+                        <textarea name="message" required></textarea>
+                    </label>
+                    <button type="submit">Envoyer</button>
+                </form>
+                <!-- <form action="https://formspree.io/f/xpwrwngd" method="POST" class="space-y-4">
                     <div>
                         <label for="email"
                             class="block text-left font-semibold mb-1 text-neutralDark dark:text-neutralLight">Email</label>
@@ -927,7 +936,7 @@
                         class="bg-jokerPurple text-white font-bold px-6 py-2 rounded-md hover:opacity-80 transition w-full">
                         Envoyer
                     </button>
-                </form>
+                </form> -->
                 <div id="formStatus" class="hidden text-center text-green-500 mt-4">
                     Message envoyé avec succès !
                 </div>
